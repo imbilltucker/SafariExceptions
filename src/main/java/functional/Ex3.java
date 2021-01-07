@@ -4,9 +4,13 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
+import java.util.Optional;
+import java.util.function.Function;
 import java.util.stream.Stream;
 
 public class Ex3 {
+
+
   public static Stream<String> getLines(String fn) {
     try {
       return Files.lines(Path.of(fn));
