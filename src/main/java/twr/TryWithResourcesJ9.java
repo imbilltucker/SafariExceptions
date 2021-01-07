@@ -8,10 +8,11 @@ import java.nio.file.Path;
 import java.nio.file.StandardOpenOption;
 
 public class TryWithResourcesJ9 {
-  public static void main(String[] args) {
-    BufferedReader br;
+  public static void main(String[] args) throws IOException {
+    /*final */BufferedReader br = Files.newBufferedReader(Path.of("data.txt"));
+//    br = null;
     try (
-
+        br;
         BufferedWriter out = Files.newBufferedWriter(Path.of("out.txt"), StandardOpenOption.APPEND);
     ) {
       // do Stuff...
